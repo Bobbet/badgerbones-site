@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block  debug %}
+{% include 'index-debug.html' %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock content %}
+
+{% block listing %}
+{% if articles %}
+{% for article in articles_page.object_list %} 
+
+
+ <a href="{{ SITEURL }}/{{ article.url }}">
+        
+        <article>
+        <h1 class="article-title">{{ article.title }}</h1>
+        {% if article.teaser %}
+            <p> {{ article.teaser }}</p>
+            {% endif %}
+         {% if article.author %}
+            By <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+        {% endif %} 
+</article>
+</a>
+
+{% endfor %}
+{% endif %}
+{% endblock listing %}

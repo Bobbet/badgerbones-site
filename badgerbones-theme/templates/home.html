@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block  debug %}
+{% include 'home-debug.html' %}
+{% endblock %}
+
+{% block content %}
+{{ page.title }}
+{% endblock content %}
+
+
+
+{% block listing %}
+{% for article in articles %} 
+
+
+ <a href="{{ SITEURL }}/{{ article.url }}">
+        
+        <article>
+        <h1 class="article-title">{{ article.title }}</h1>
+        {% if article.teaser %}
+            <p> {{ article.teaser }}</p>
+            {% endif %}
+</article>
+</a>
+
+{% endfor %}
+{% endblock listing %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block  debug %}
+{% include 'page-debug.html' %}
+{% endblock %}
+{% block content %}
+<article>
+<h1>{{ page.title }}</h1>
+{{ page.content }}
+</article>
+{% endblock %}
